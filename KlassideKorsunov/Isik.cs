@@ -24,7 +24,7 @@ namespace KlassideKorsunov
         }
         public virtual void print_Info()
         {
-            Console.Write("{nimi} sündinud {synniAasta} aastal, ja tema sugu on {sugu}");
+            Console.Write("{nimi} sündinud {synniAasta} aastal, ja tema sugu on {Sugu}");
         }
         public void muudaNimi(string uusNimi) { nimi = uusNimi; }
         public void muudaSynniAasta(int uusSynniAasta) { synniAasta = uusSynniAasta; }
