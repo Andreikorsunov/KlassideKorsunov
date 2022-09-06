@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KlassideKorsunov
 {
     abstract class Isik
     {
-        protected string nimi;
-        protected int synniAasta;
+        public string nimi;
+        public int synniAasta;
         public enum sugu { mees, naine };
-        protected sugu Sugu;
+        public sugu Sugu;
         public string koolinimi;
         public string klass;
-        public string specialsus;
+        public string spetsialsus;
         
         public string asutus;
         public string amet;
@@ -23,14 +19,14 @@ namespace KlassideKorsunov
         public string oppeasutus;
         public string eriala;
         public int kursus;
-        public Isik(string nimi, int synniAasta, sugu Sugu, string kooliNimi, string klass, string specialsus)
+        public Isik(string nimi, int synniAasta, sugu Sugu, string koolinimi, string klass, string spetsialsus)
         {
             this.nimi = nimi;
             this.synniAasta = synniAasta;
             this.Sugu = Sugu;
-            this.koolinimi = kooliNimi;
+            this.koolinimi = koolinimi;
             this.klass = klass;
-            this.specialsus = specialsus;
+            this.spetsialsus = spetsialsus;
         }
 
         public Isik(string nimi, int synniAasta, sugu Sugu, string asutus, string amet, double tootasu)
@@ -58,7 +54,7 @@ namespace KlassideKorsunov
             this.synniAasta = isik.synniAasta;
             this.Sugu = isik.Sugu;
         }
-        public virtual void print_Info()
+        public virtual void print()
         {
             Console.Write("{nimi} sündinud {synniAasta} aastal, ja ta on {Sugu}");
         }
@@ -70,6 +66,9 @@ namespace KlassideKorsunov
             int vanus = DateTime.Now.Year - synniAasta;
             return vanus;
         }
+        public Isik() { }
         public abstract double arvutaSissetulek(double maksuvaba, double tulumaks);
+        public abstract void print_Info();
+        public abstract void print_Haal();
     }
 }

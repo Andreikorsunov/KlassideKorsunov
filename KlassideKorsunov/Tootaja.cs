@@ -20,11 +20,11 @@ namespace KlassideKorsunov
             this.amet = tootaja.amet;
             this.tootasu = tootaja.tootasu;
         }
-        public override double arvutaSissetulek(double maksuvaba, double tulumaks)
+        public double arvutaSissetulek(double maksuvaba, double tulumaks)
         {
-            double sedaTeEiNae = (tootasu - maksuvaba) * (tulumaks / 100);
-            double netopalk = tootasu - sedaTeEiNae;
-            return netopalk;
+            double sissetulek = (tootasu - maksuvaba) * (tulumaks / 100);
+            double nettopalk = tootasu - sissetulek;
+            return nettopalk;
         }
     }
 }
